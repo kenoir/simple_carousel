@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style type="text/css">
+            #fr {
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+            body {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe id="fr" src="data:text/html,<h1>nope</h1>">
+        </iframe>
+        <script>
+            var idx = 0;
+            var urls = [
+                'http://news.bbc.co.uk/',
+                '/tfl.html',
+                '/clock.php',
+                '/issues.php',
+                'http://traintimes.org.uk/shepherd\'s%20bush/lewes',
+                '/lunch.php',
+                'http://www.bbc.co.uk/weather/w12',
+                '/productAge.php'
+            ];
+            var ref = function() {
+                ++idx;
+                idx %= (urls.length);
+
+                document.getElementById('fr').src = urls[idx];
+                if (false) {
+                    s = document.body.style;
+                    if (s.background == 'black') {
+                        s.background = 'white';
+                    } else {
+                        s.background = 'black';
+                    }
+                }
+            };
+            window.setInterval(ref, 60*1000);
+            ref();
+        </script>
+    </body>
+</html>
