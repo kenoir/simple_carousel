@@ -8,9 +8,10 @@ body {
 
 </style>
 <center><h1>ISSUE HOARDERS: PSI</h1></center>
-<?
-require_once('inc.php');
-$s = fetch('https://jira.dev.bbc.co.uk/browse/PSI?selectedTab=com.atlassian.jira.plugin.system.project%3Aissues-panel&decorator=none&contentOnly=true', 10);
+<?php
+    require_once('inc.php');
+
+$s = Utility::fetch('https://jira.dev.bbc.co.uk/browse/PSI?selectedTab=com.atlassian.jira.plugin.system.project%3Aissues-panel&decorator=none&contentOnly=true', 10);
 preg_match_all(',<tr class="assigneeRow">.*?<td class="name first"><.*?>(.*?)</a>.*?<td class="count">(\d+)</td>,s', $s, $regs);
 
 $w = array();

@@ -1,0 +1,38 @@
+display([
+    {
+        href: 'clock.php',
+        display_for_seconds: 10 
+    },
+    {
+        href: 'tfl.html',
+        display_for_seconds: 10
+    },
+    {
+        href: 'http://pod-delivery.national.core.bbc.co.uk:8080/view/PSDR/',
+        display_for_seconds: 10
+    },
+    {
+        href: 'issues.php',
+        display_for_seconds: 10
+    }, 
+    {
+        href: 'http://traintimes.org.uk/shepherd\'s%20bush/lewes',
+        display_for_seconds: 10
+    },
+    {
+        href: 'http://news.bbc.co.uk/',
+        display_for_seconds: 10
+    },
+    {
+        href: 'lunch.php',
+        display_for_seconds: 10
+    },
+    {
+        href: 'http://www.bbc.co.uk/weather/w12',
+        display_for_seconds: 10
+    },
+    {
+        href: '/productAge.php',
+        display_for_seconds: 10
+    }
+]);

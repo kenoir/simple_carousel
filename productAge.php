@@ -47,7 +47,7 @@ echo "</tr>";
 
 foreach (array('ace', 'adie', 'fuel', 'hermes', 'ondemandmanager', 'picr', 'rocket', 'rkt-sky') as $product) {
     echo "<tr><td>" . disp($product) . "</td><td>";
-    if (strstr(fetch("-I https://ci-app.int.bbc.co.uk/hudson/job/psi-" . disp($product) . "-snapshot-deploy/lastBuild/buildStatus"), "blue.gif")) {
+    if (strstr(Utility::fetch("-I https://ci-app.int.bbc.co.uk/hudson/job/psi-" . disp($product) . "-snapshot-deploy/lastBuild/buildStatus"), "blue.gif")) {
         echo "<span style='color: #2aa198'>&#10004;</span>"; // tick
     } else {
         echo "<span style='zoom: 1.5; color: #dc322f'>&#10008;</span>"; // cross
@@ -55,7 +55,7 @@ foreach (array('ace', 'adie', 'fuel', 'hermes', 'ondemandmanager', 'picr', 'rock
     echo "</td>";
     foreach ($envs as $env) {
         echo "<td>";
-        echo vers(fetch("https://admin.$env.bbc.co.uk/$product/admin/version/"));
+        echo vers(Utility::fetch("https://admin.$env.bbc.co.uk/$product/admin/version/"));
         echo "</td>";
     }
     echo "</tr>";
@@ -64,7 +64,7 @@ foreach (array('ace', 'adie', 'fuel', 'hermes', 'ondemandmanager', 'picr', 'rock
 echo "<tr><td>PIPS</td><td></td>";
 foreach ($envs as $env) {
     echo "<td>";
-    echo vers(fetch("https://api.$env.bbc.co.uk/pips/health/serverinfo/release/"));
+    echo vers(Utility::fetch("https://api.$env.bbc.co.uk/pips/health/serverinfo/release/"));
     echo "</td>";
 }
 

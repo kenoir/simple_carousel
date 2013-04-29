@@ -13,11 +13,12 @@
         </style>
 </head>
 <body>
-<?
+
+<?php
 
 require_once('inc.php');
 
-$menu = fetch('http://www.bbcclub.com/together/media-centre/todays-menu', 8);
+$menu = Utility::fetch('http://www.bbcclub.com/together/media-centre/todays-menu', 8);
 
 preg_match(',(<h1>Today.s Menu</h1>.*)<footer class="orange">,s', $menu, $regs);
 echo "<center>";
