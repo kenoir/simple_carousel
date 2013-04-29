@@ -1,11 +1,10 @@
-#PSTV
+#SimpleCarousel
 
 ##Dependencies
 
 - [Ender](https://github.com/ender-js/Ender)
 
-
-### Build
+###Build
 
     ender build jeesh reqwest
 
