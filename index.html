@@ -1,43 +1,14 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/main.css"/>
-        <script src="js/ender.js" type="text/javascript"></script>
+        <script src="js/ender.min.js" type="text/javascript"></script>
+        <script src="js/simple_carousel.js" type="text/javascript"></script>
     </head>
     <body>
         <iframe id="carousel_frame" src="data:text/html,<h1>Loading ...</h1>">
         </iframe>
-        <script>
-
-            var jsonp_location = "/js/config/urls.json"
-
-            $.domReady(function () { 
-                $.ajax({
-                    url: jsonp_location 
-                    , type: 'jsonp'
-                    , jsonpCallbackName: 'display'
-                    , success: function (urls) {
-                        rotate_carousel(urls); 
-                    }
-                });
-            });
-
-            var current_index = 0;
-            var rotate_carousel = function(urls){
-                current_index %= (urls.length);
-                var url = urls[current_index];
-
-                showURL(url.href);
-                current_index++;
- 
-                setTimeout(function(){
-                   rotate_carousel(urls);
-                }, url.display_for_seconds * 1000);
-
-            };
-            var showURL = function(url){
-                $('#carousel_frame').attr('src', url);
-            }
-
+        <script type="text/javascript">
+            new SimpleCarousel("/js/config/urls.json");
         </script>
     </body>
 </html>
